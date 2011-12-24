@@ -1,0 +1,16 @@
+RewriteEngine on
+Options +FollowSymlinks
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+
+	RewriteRule ^js/(.*)$ 		js/index.php [L,NC]
+	RewriteRule ^css/(.*)$ 		css/index.php [L,NC]
+	
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+	
+    RewriteRule ^(.*)$ 			index.php			[L,NC]
+
+	
+</IfModule>
